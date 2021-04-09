@@ -1,8 +1,13 @@
 import React from "react";
 import styled from "styled-components";
+import ListItems from "./ListItems";
 
 function Home() {
-  return <Container>I am home</Container>;
+  return (
+    <Container>
+      <ListItems />
+    </Container>
+  );
 }
 
 export default Home;
