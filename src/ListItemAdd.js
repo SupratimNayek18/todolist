@@ -1,13 +1,24 @@
 import React from "react";
 import styled from "styled-components";
 import AddCircleIcon from "@material-ui/icons/AddCircle";
+import { makeStyles } from "@material-ui/core";
+
+const useStyles = makeStyles({
+  root: {
+    color: "orange",
+    "&:hover": { color: "blue", cursor: "pointer" },
+    width: 30,
+    height: 30,
+  },
+});
 
 function ListItemAdd() {
+  const classes = useStyles();
   return (
     <Container>
       <AddContentContainer>Click button to add me to list</AddContentContainer>
       <ButtonContainer>
-        <AddCircleIcon />
+        <AddCircleIcon className={classes.root} />
       </ButtonContainer>
     </Container>
   );
