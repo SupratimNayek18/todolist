@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-function ListItem() {
-  return <Container>I am a list item</Container>;
+function ListItem({ task }) {
+  return <Container>{task}</Container>;
 }
 
 export default ListItem;

@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import ListItem from "./ListItem";
 import ListItemAdd from "./ListItemAdd";
 import { db } from "./firebase";
 
 function ListItems() {
+  //react state functionality
+  const [items, setItems] = useState([]);
+  //getting task items from database
   const getItems = () => {
     db.collection("listItems").onSnapshot((snapshot) => {
       let listItems = [];
@@ -12,13 +15,20 @@ function ListItems() {
         id: doc.id,
         item: doc.data(),
       }));
-      console.log(listItems[0].item.task);
+      setItems(listItems);
     });
   };
-  getItems();
+
+  //useeffect hook to make sure the data loads only whn the page loads for the first time
+  useEffect(() => {
+    getItems();
+  }, []);
+
   return (
     <Container>
-      <ListItem />
+      {items.map((item) => (
+        <ListItem task={item.item.task} />
+      ))}
       <ListItemAdd />
     </Container>
   );
