@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import AddCircleIcon from "@material-ui/icons/AddCircle";
 import { makeStyles } from "@material-ui/core";
+import { db } from "./firebase";
 
 const useStyles = makeStyles({
   root: {
@@ -14,11 +15,21 @@ const useStyles = makeStyles({
 
 function ListItemAdd() {
   const classes = useStyles();
+  const insertIntoDatabse = () => {
+    let task = document.getElementById("taskInput").value;
+    db.collection("listItems").doc().set({
+      task: task,
+    });
+    document.getElementById("taskInput").value = "";
+  };
   return (
     <Container>
-      <AddContentContainer>Click button to add me to list</AddContentContainer>
+      <AddContentContainer>
+        <p>Enter new task</p>
+        <input type="text" name="name" id="taskInput" />
+      </AddContentContainer>
       <ButtonContainer>
-        <AddCircleIcon className={classes.root} />
+        <AddCircleIcon className={classes.root} onClick={insertIntoDatabse} />
       </ButtonContainer>
     </Container>
   );
@@ -36,7 +47,21 @@ const Container = styled.div`
   justify-content: space-around;
 `;
 
-const AddContentContainer = styled.div``;
+const AddContentContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  p {
+    margin-bottom: 20px;
+  }
+  input {
+    border: none;
+    border-bottom: 1px solid;
+    :focus {
+      outline: none;
+    }
+  }
+`;
 
 const ButtonContainer = styled.div`
   display: flex;

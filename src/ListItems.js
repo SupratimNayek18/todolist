@@ -27,7 +27,7 @@ function ListItems() {
   return (
     <Container>
       {items.map((item) => (
-        <ListItem task={item.item.task} />
+        <ListItem task={item.item.task} id={item.id} />
       ))}
       <ListItemAdd />
     </Container>

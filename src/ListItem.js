@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import DeleteIcon from "@material-ui/icons/Delete";
 import { makeStyles } from "@material-ui/core";
+import { db } from "./firebase";
 
 const useStyles = makeStyles({
   root: {
@@ -12,12 +13,15 @@ const useStyles = makeStyles({
   },
 });
 
-function ListItem({ task }) {
+function ListItem({ task, id }) {
+  const deleteTask = () => {
+    db.collection("listItems").doc(id).delete();
+  };
   const classes = useStyles();
   return (
     <Container>
       <TaskContainer>{task}</TaskContainer>
-      <ButtonContainer>
+      <ButtonContainer onClick={deleteTask}>
         <DeleteIcon className={classes.root} />
       </ButtonContainer>
     </Container>
