@@ -17,8 +17,9 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   padding: 50px;
-  background-color: #ffb037;
-  box-shadow: 0 5px 20px grey;
+  background-color: #1b1717;
+  box-shadow: 0 5px 50px grey;
+  color: #51c4d3;
 `;
 
 const TitleContainer = styled.h1``;

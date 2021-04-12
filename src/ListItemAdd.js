@@ -6,8 +6,8 @@ import { db } from "./firebase";
 
 const useStyles = makeStyles({
   root: {
-    color: "orange",
-    "&:hover": { color: "blue", cursor: "pointer" },
+    color: "#51c4d3",
+    "&:hover": { color: "#126e82", cursor: "pointer" },
     width: 30,
     height: 30,
   },
@@ -40,11 +40,12 @@ export default ListItemAdd;
 const Container = styled.div`
   position: relative;
   padding: 40px;
-  box-shadow: 0 2px 10px grey;
+  box-shadow: 0 1px 8px grey;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  margin: 50px 30px 30px;
 `;
 
 const AddContentContainer = styled.div`

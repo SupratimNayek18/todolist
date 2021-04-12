@@ -38,6 +38,6 @@ export default ListItems;
 
 const Container = styled.div`
   display: flex;
-  margin: 40px;
   justify-content: start;
+  flex-wrap: wrap;
 `;
