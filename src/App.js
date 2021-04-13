@@ -2,15 +2,21 @@ import "./App.css";
 import Header from "./Header";
 import Home from "./Home";
 import Footer from "./Footer";
+import styled from "styled-components";
 
 function App() {
   return (
-    <div className="App">
+    <Container>
       <Header />
       <Home />
       <Footer />
-    </div>
+    </Container>
   );
 }
 
 export default App;
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+`;

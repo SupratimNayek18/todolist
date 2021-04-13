@@ -3,7 +3,6 @@ import styled from "styled-components";
 import ListItems from "./ListItems";
 
 var date = new Date();
-
 const weekdays = [
   "Sunday",
   "Monday",
@@ -13,7 +12,6 @@ const weekdays = [
   "Friday",
   "Saturday",
 ];
-
 let DayOfTheWeek = weekdays[date.getDay()];
 
 function Home() {
@@ -29,9 +27,7 @@ function Home() {
 
 export default Home;
 
-const Container = styled.div`
-  width: 100%;
-`;
+const Container = styled.div``;
 
 const DayContainer = styled.div`
   display: flex;

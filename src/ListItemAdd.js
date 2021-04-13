@@ -17,9 +17,14 @@ function ListItemAdd() {
   const classes = useStyles();
   const insertIntoDatabse = () => {
     let task = document.getElementById("taskInput").value;
-    db.collection("listItems").doc().set({
-      task: task,
-    });
+    if (task == null || task === "") {
+      alert("Task Cannot Be Empty");
+    } else {
+      db.collection("listItems").doc().set({
+        task: task,
+      });
+    }
+
     document.getElementById("taskInput").value = "";
   };
   return (
@@ -45,7 +50,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  margin: 50px 30px 30px;
+  margin: 25px 30px 30px;
 `;
 
 const AddContentContainer = styled.div`

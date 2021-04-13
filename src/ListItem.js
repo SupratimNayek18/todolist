@@ -32,7 +32,7 @@ export default ListItem;
 
 const Container = styled.div`
   padding: 60px;
-  margin: 25px 30px 30px;
+  margin: 25px 30px 25px;
   box-shadow: 0 0 5px grey;
   border-radius: 10px;
   position: relative;

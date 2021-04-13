@@ -27,8 +27,6 @@ const Container = styled.div`
   color: #51c4d3;
 `;
 
-//
-
 const LineOne = styled.p``;
 
 const LineTwo = styled.p`
