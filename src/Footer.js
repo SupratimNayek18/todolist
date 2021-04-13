@@ -17,7 +17,7 @@ const Container = styled.div`
   width: 100%;
   position: absolute;
   bottom: 0;
-  padding: 20px;
+  padding: 20px 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,6 +26,8 @@ const Container = styled.div`
   flex-direction: column;
   color: #51c4d3;
 `;
+
+//
 
 const LineOne = styled.p``;
 

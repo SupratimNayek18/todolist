@@ -40,7 +40,7 @@ export default ListItemAdd;
 const Container = styled.div`
   position: relative;
   padding: 40px;
-  box-shadow: 0 1px 8px grey;
+  box-shadow: 0 0 5px grey;
   border-radius: 10px;
   display: flex;
   flex-direction: column;

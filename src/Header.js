@@ -16,7 +16,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 50px;
+  padding: 50px 0;
   background-color: #1b1717;
   box-shadow: 0 5px 50px grey;
   color: #51c4d3;
